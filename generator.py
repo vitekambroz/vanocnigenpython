@@ -1,6 +1,6 @@
 import tkinter as tk
 root = tk.Tk()
-root.geometry("300x300")
+root.geometry("1000x500")
 root.resizable(False, False)
 root.title("Generator")
 
@@ -10,5 +10,7 @@ tk.Entry(root).grid(column=0, row=1)
 
 tk.Button(root, text="Přidat").grid(column=1, row=1)
 
+listbox = tk.Listbox(root, selectmode=tk.MULTIPLE)
+listbox.grid(row=2, column=0, padx=5, pady=5)
 
 root.mainloop()
