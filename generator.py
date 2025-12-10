@@ -6,11 +6,16 @@ root.title("Generator")
 
 tk.Label(root, text="Generátor Vánočních přání").grid(row=0, column=0)
 
-tk.Entry(root).grid(column=0, row=1)
+a = tk.Entry(root)
+a.grid(column=0, row=1)
 
-tk.Button(root, text="Přidat").grid(column=1, row=1)
+def tlacitko():
+    b= a.get()
+    listbox.insert(tk.END, b)
 
-listbox = tk.Listbox(root, selectmode=tk.MULTIPLE)
-listbox.grid(row=2, column=0, padx=5, pady=5)
+tk.Button(root, text="Přidat", command=tlacitko).grid(column=1, row=1)
+
+listbox = tk.Listbox(root, selectmode=tk.SINGLE)
+listbox.grid(row=2, column=0, padx=5, pady=5),
 
 root.mainloop()
